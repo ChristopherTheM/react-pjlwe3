@@ -1,46 +1,22 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './style.css';
+import { sha256 } from 'js-sha256';
 
 export default function App() {
-  const names = [];
-  const [data, setData]=useState(null)
-  const [print, setPrint]=useState(false)
-  
-  function getData(val){
-    setData(val.target.value)
-    setPrint(false)
-    console.log(val.target.value);
+  let [data, setData] = useState(null);
+  const [color, setColor] = useState(null);
+
+  function getData(val) {
+    const newInput = val.target.value;
+    setData(newInput);
+    const hash = sha256(newInput);
+    console.log(hash);
+    setColor('#' + hash.substring(0, 6));
   }
 
-  names.push(data);
- 
- return(
-    
-<div>
-
-  
-      <h1>Hello World!</h1>
-      <form>
-        {' '}
-        First Name : <input type="text" name="Fname" onChange={getData}></input>
-        <button onClick={()=> setPrint(true)} >Click Me!</button>
-      </form>
-
-      <p>
-        I need to create a text box that takes user input in the form of text.<br /> -
-        Output in large font and a unique color, keeping that color with word
-        combo.<br /> - So "dave" is red, "table" is orange type thing. Deterministic
-        function.
-      </p>
-      <br />
-      <ul>
-      {
-        print?
-        <p>{names}</p>
-        :null
-      }
-      </ul>
-      
+  return (
+    <div>
+      <input onChange={getData} /> <p style={{ color: color }}>{data}</p>
     </div>
   );
 }
