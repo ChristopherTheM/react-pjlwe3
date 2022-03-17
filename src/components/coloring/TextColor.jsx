@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { sha256 } from 'js-sha256';
 
-export default function App() {
+export default function TextColor(parent, props) {
   let [data, setData] = useState(null);
   const [color, setColor] = useState(null);
 
@@ -15,7 +15,8 @@ export default function App() {
 
   return (
     <div>
-      <input onChange={getData} /> <p style={{ color: color }}>{data}</p>
+      <input onChange={getData} value={data} />{' '}
+      <p style={{ color: color }}>{data}</p>
     </div>
   );
 }

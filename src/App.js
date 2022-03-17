@@ -1,11 +1,14 @@
 import React from 'react';
 import './style.css';
-import App from './imports';
+import TextColor from './components/coloring/TextColor';
+import { Slider, Switch } from '@mui/material';
 
-export default function main() {
+export default function App(parent, props) {
   return (
     <div>
-      <App />
+      <TextColor />
+      <Switch />
+      <Slider />
     </div>
   );
 }
