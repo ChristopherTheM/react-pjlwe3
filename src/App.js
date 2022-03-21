@@ -1,13 +1,12 @@
 import React from 'react';
 import './style.css';
-import TextColor from './components/coloring/TextColor';
-import { Slider, Switch } from '@mui/material';
+import { TextColor, Switches, Slider } from './Imports';
 
 export default function App(parent, props) {
   return (
     <div>
       <TextColor />
-      <Switch />
+      <Switches />
       <Slider />
     </div>
   );
