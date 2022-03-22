@@ -6,6 +6,7 @@ import { pink } from '@mui/material/colors';
 
 //Just started messing with switches as well to have some fun.
 //My goal here is to have the switch change color every time it switches using hashing.
+//I think I just need to define the color switch with its own color hashing from sha256.
 
 const GreenSwitch = styled(Switch)(({ theme }) => ({
   '& .MuiSwitch-switchBase.Mui-checked': {
