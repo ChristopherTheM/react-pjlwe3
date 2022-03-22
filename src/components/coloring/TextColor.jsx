@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { sha256 } from 'js-sha256';
+//This component creates a textbox that takes user input and colors it with hashing
+//It returns the colored text as a paragraph in hmtl
 
 export default function TextColor(parent, props) {
   let [data, setData] = useState(null);
@@ -20,3 +22,5 @@ export default function TextColor(parent, props) {
     </div>
   );
 }
+
+//I'm experimenting with this in Input.jsx to try and export a variable
